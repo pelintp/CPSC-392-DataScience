@@ -1,0 +1,71 @@
+---
+title: "Clothing Store Customer Analysis"
+author: Pelin Nisa Top
+format: pdf
+---
+
+# Introduction
+
+The clothing store's data tells us about customer details like age, height, whether they're in a coupon program, and how they spend. We're trying to guess how much each customer will spend in a year. If we get this right, the store can better plan its ads and offers, which might help sell more and make customers happier. Understanding these details can help the store earn more money.
+
+# Methods
+
+We utilized two regression models to forecast the spending:
+
+1. **Linear Regression**: A foundational method that assumes a direct linear relationship between predictors and the outcome.
+
+2. **Polynomial Regression**: This method can unearth non-linear patterns by considering higher-degree relationships and interactions among predictors.
+
+Preprocessing steps included:
+
+- Elimination of missing entries.
+- Partitioning of data into an 80-20 train-test split.
+- Z-score normalization of continuous predictors.
+- One-hot encoding of categorical attributes.
+
+# Results
+
+## Model Performance
+
+For the **Linear Regression model**:
+
+- **Training Set**:
+  - MSE: `lin_train_mse`
+  - MAE: `lin_train_mae`
+  - R^2: `lin_train_r2`
+
+- **Testing Set**:
+  - MSE: `lin_test_mse`
+  - MAE: `lin_test_mae`
+  - R^2: `lin_test_r2`
+
+For the **Polynomial Regression model**:
+
+- **Training Set**:
+  - MSE: `poly_train_mse`
+  - MAE: `poly_train_mae`
+  - R^2: `poly_train_r2`
+
+- **Testing Set**:
+  - MSE: `poly_test_mse`
+  - MAE: `poly_test_mae`
+  - R^2: `poly_test_r2`
+
+## Graphical Analysis
+
+### Effect of Test Group on Annual Spending by Gender
+
+![Effect of Test Group on Annual Spending by Gender](1.png)
+
+The graph shows if being in the test group changes how much people spend in a year, and if this change is the same for everyone, no matter their gender. Looking at the graph, it seems like men and women in the test group spend a bit more each year. However, those who identify as non-binary or other genders in the test group might spend even more.
+
+### Relationship between Salary, Number of Purchases, and Annual Spending
+
+![Relationship between Salary, Number of Purchases, and Annual Spending](2.png)
+
+The graph shows a link between how much someone earns, how often they buy, and how much they spend in a year. People who earn more tend to buy more often. Also, if someone buys more often, they usually spend more in total over the year, suggesting they like shopping at the store.
+
+# Discussion/Reflection
+
+This homework has given us a better understanding of how customers behave and what makes them spend more at the store. While the more complex polynomial model might give us closer predictions in some situations, it could also be too detailed and miss the mark in others. If we do this kind of study again, we might look at where customers are from, what specific products they like, or if they buy more during certain times of the year. It could also be helpful to group customers by how they shop, which could help the store advertise more effectively.
+
